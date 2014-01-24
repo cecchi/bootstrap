@@ -4,7 +4,15 @@
 
 
 // Reset the box-sizing
-
+//
+// This is intrusive, but `border-box` is better than `content-box` for
+// sizing components, and folks all over are switching to it. Without this,
+// we'd have to include a mixin in every single component and sub-component,
+// which would be painful.
+//
+// Heads up! This reset may cause conflicts with some third-party widgets.
+// For recommendations on working around such conflicts, see
+// http://getbootstrap.com/getting-started/#third-box-sizing
 * {
   .box-sizing(border-box);
 }
